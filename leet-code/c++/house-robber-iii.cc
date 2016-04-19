@@ -23,10 +23,6 @@ public:
     vector<int> robU(TreeNode* root) {
         vector<int> ret(3, 0);
         
-        ret[0] = 0;
-        ret[1] = 0;
-        ret[2] = 0;
-        
         if (!root) return ret;
         
         vector<int> l = robU(root->left);
