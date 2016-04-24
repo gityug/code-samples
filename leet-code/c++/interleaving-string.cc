@@ -13,7 +13,7 @@ class Solution {
 public:
 
     // Backtracking is exponential 
-    // DP is quadratic -- DP decision problem. Compute dp[i][j] based on dp[i-1][j] && dp[i][j-1]
+    // DP decision problem -- Compute dp[i][j] based on dp[i-1][j] && dp[i][j-1]. Quadratic in complexity.
     bool isInterleave(string s1, string s2, string s3) {
         int ns1(s1.size()), ns2(s2.size()), ns3(s3.size());
         
