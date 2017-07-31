@@ -11,9 +11,10 @@ public:
         for (int i(0); i < r; ++i) {
             for (int j(0); j < c; ++j) {
                 if (board[i][j] == 'X') {
-                    res++;
-                    if (j > 0) if (board[i][j-1] == 'X') res--;
-                    if (i > 0) if (board[i-1][j] == 'X') res--;
+                    // increment only if previous cell is not 'X', verticlaly or horizontally
+                    if (!((j > 0) && (board[i][j-1] == 'X')) &&
+                        !((i > 0) && (board[i-1][j] == 'X')))
+                        res++;
                 }
             }
         }
