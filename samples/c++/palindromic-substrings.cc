@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/palindromic-substrings/description/
+// better soln https://discuss.leetcode.com/topic/96869/java-o-n-2-time-o-1-space-solution-with-comments -- O(n^2) 
+// yours is O(n^3)
 class Solution {
 public:
     bool palindrome(string s) {
