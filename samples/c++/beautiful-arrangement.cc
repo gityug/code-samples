@@ -1,32 +1,29 @@
 // https://leetcode.com/problems/beautiful-arrangement/description/
 class Solution {
-    int res = 0;
-    vector<int> v;    
     
-    void countArrangementHelper(int id, int n) {
-        if ((n + 1) == id) {
-            res++; return;
-        }
+    int countArrangementHelper(int n, vector<int>& v) {
+        if (n <= 0) return 1;
+
+        int res(0);
         
-        for (int i = id; i <= n; ++i) {
-            if (id % v[i] == 0 || v[i] % id == 0) {
-                swap(v[i], v[id]);
-                countArrangementHelper(id + 1, n);
-                swap(v[i], v[id]);                
+        for (int i = 1; i <= n; ++i) {
+            if (n % v[i] == 0 || v[i] % n == 0) {
+                swap(v[n], v[i]);
+                res += countArrangementHelper(n-1, v);
+                swap(v[n], v[i]);                
             }
         }
+        return res;
     }
     
 public:
     int countArrangement(int N) {
+        int res(0);
+        vector<int> v;            
         
-        v.push_back(0);
-        
-        for (int i(1); i <= N; ++i)
+        for (int i(0); i <= N; ++i)
             v.push_back(i);
         
-        countArrangementHelper(1, N);
-        
-        return res;
+        return countArrangementHelper(N, v);                
     }
 };
