@@ -2,14 +2,13 @@
 class Solution {
 public:
     vector<string> fizzBuzz(int n) {
-        vector<string> r;
+        vector<string> res;
         for (int i = 1; i <= n; ++i) {
-            string s;
-            if (i % 3 == 0) s = "Fizz";
-            if (i % 5 == 0) s += "Buzz";
-            if (s.empty()) s = to_string(i);
-            r.push_back(s);
+            if (i % 15 == 0) res.push_back("FizzBuzz");
+            else if (i % 3 == 0) res.push_back("Fizz");
+            else if (i % 5 == 0) res.push_back("Buzz");
+            else res.push_back(to_string(i));
         }
-        return r;
+        return res;
     }
 };
