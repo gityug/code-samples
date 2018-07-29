@@ -2,7 +2,7 @@
 class Solution {
     
     int countArrangementHelper(int n, vector<int>& v) {
-        if (n <= 0) return 1;
+        if (n <= 1) return 1;
 
         int res(0);
         
